@@ -139,9 +139,9 @@ func (m *cache) cacheable(r *http.Request, w http.ResponseWriter, status int) (t
 	expiry := time.Until(expireBy)
 	maxExpiry := time.Duration(m.cfg.MaxExpiry) * time.Second
 
-	if maxExpiry < expiry {
+	//if maxExpiry < expiry {
 		expiry = maxExpiry
-	}
+	//}
 
 	return expiry, true
 }
